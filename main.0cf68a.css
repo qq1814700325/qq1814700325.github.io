@@ -4294,3 +4294,13 @@ a.pswp__share--download:hover {
 	text-decoration: underline
 }
 
+.article-inner h1.article-title_code_ant, .article-title_code_ant {
+	color: #000000;
+	margin-left: 0;
+	font-weight: 300;
+	line-height: 35px;
+	margin-bottom: 20px;
+	font-size: 32px;
+	transition: color .3s
+}
+
