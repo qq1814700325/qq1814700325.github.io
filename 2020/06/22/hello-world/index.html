@@ -43,7 +43,7 @@
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
       
-<div class="overlay" style="background: #4d4d4d"></div>
+<div class="overlay" style="background: lightgrey"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
@@ -98,7 +98,7 @@
     <div class="mid-col" q-class="show:isShow,hide:isShow|isFalse">
       
 <nav id="mobile-nav">
-  	<div class="overlay js-overlay" style="background: #4d4d4d"></div>
+  	<div class="overlay js-overlay" style="background: lightgrey"></div>
 	<div class="btnctn js-mobile-btnctn">
   		<div class="slider-trigger list" q-on="click: openSlider(e)"><i class="icon icon-sort"></i></div>
 	</div>
@@ -314,7 +314,28 @@
   
   
   
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2020/06/22/hello-world/", 
+    sourceId: "hello-world",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+  
 
+  
+  <div id="SOHUCS" sid="hello-world" ></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "true",
+        conf: "true"
+    });
+</script>
+</script>
   
 
   
@@ -329,6 +350,24 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
+                        			<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+			<script>
+				var now = new Date(); 
+				function createtime() { 
+					var grt= new Date("6/4/2020 21:00:00");//此处修改你的建站时间或者网站上线时间 
+					now.setTime(now.getTime()+250); 
+					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+					if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+					mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+					seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+					snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+					document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+					document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+				} 
+				setInterval("createtime()",250);
+			</script>
+
     		&copy; 2020 John Doe
     	</div>
       	<div class="footer-right">
