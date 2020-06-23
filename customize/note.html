@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>FrontEndBase-笔记</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/note.css" />
+		<link rel="shortcut icon" href="./img/favicon.ico" /> <!-- 页眉图标 -->
+	</head>
+	<body>
+		<div class="scalable">
+			<div class="content">
+				<div id="menu">
+					<div>
+						<p>JAVA</p>
+					</div>
+					<div>
+						<p>Front</p>
+					</div>
+					<div>
+						<p>PHP</p>
+					</div>
+					<div>
+						<p>mysql</p>
+					</div>
+					<div>
+						<p>Tutorial</p>
+					</div>
+					<div>
+						<p>English</p>
+					</div>
+				</div>
+				<!-- <img src="https://codingstartup.com/images/logo.svg" alt=""> -->
+			</div>
+			<div class="separator">
+				<i></i><i></i>
+			</div>
+		</div>
+		<div class="main">
+			<div class="javamain">
+				<div class="java" id="java1">
+					<h2>1. 关于字符串的相关知识点</h2>
+					<p class=" beginning">预备知识：</p>
+					<p>1.Java中用双引号引起来的都是字符串，不能作为其它数据类型来使用，如“1+2”输出结果不可能是3 （用单引号引起来的是字符）</p>
+					<p>2.Java中字符串作为string类的实例来处理，可以通过Java.lang包中的String类来创建字符串对象，以对象的方式处理会使字符串更灵活，方便</p>
+					<p>3.在声明字符串之后最好将其赋值，不然使用时会报错，声明方式： <span class="point">String s</span> (s表示字符串的名称)</p>
+					<br>
+					<br>
+					<p class=" beginning">创建字符串：</p>
+					<p>创建字符串的两种方式：<br />
+						1.将字符串作为对象来处理，像创建对象一样创建字符串（即通过类的方法，来实例化一个字符串对象）<br />
+						2.创建一个字符串类型的常量，然后赋值</p>
+					<p>方式一的方法：</p>
+					<p>1.用字符数组创建字符串对象</p>
+					<pre>
+1     <span class="Keyword">char</span> a[] = {'g','o','o','d'};
+2     <span class="Keyword">String</span> s = <span class="Keyword">new</span> String(a);
+3     <span class="Annotate"> //该方式等价于 String s = new String("good");</span>
+						</pre>
+					<p>2.提取字符数组中的一部分来创建一个字符串对象</p>
+					<pre>
+1     <span class="Keyword">char</span> a[] = {'s','t','u','d','e','n','t'};
+2     <span class="Keyword">String</span> s = <span class="Keyword">new</span> String(a,2,4);
+3     <span class="Annotate"> //该方式等价于 String s = new String("uden");</span>
+3     <span class="Annotate"> //</span><span class="point"> 2表示从第二个字符开始截取，4表示往后截4个字符</span>
+						</pre>
+					<p>3.直接创建String对象</p>
+					<pre>
+1     <span class="Keyword">String</span> c = <span class="Keyword">new</span> String("abcd");
+2     <span class="Keyword">String</span> d = <span class="Keyword">new</span> String("abcd");
+3     <span class="Keyword">System</span>.out.println(c == d);  <span class="Annotate">//<span class="point">False</span></span>	
+4     <span class="Keyword">System</span>.out.println(c.equals(d)); <span class="Annotate">//<span class="point">True</span></span>	
+						</pre>
+					<div class="point">
+						<p> c == d是false，因为c和d指向的不是一个引用，构造方法创建的字符串对象位于堆内存中，每次new都是创建不同的对象，因此c和d的引用不一致</p>
+					</div>
+					<p>方式二的方法：(仅一种)</p>
+					<pre>
+1     <span class="Keyword">String</span> str1,str2;
+2     str1 = "we are students";
+3     str2 = "we are students";
+4     <span class="Keyword">System</span>.out.println(a == b); <span class="Annotate">//<span class="point">True</span></span>	
+5     <span class="Keyword">System</span>.out.println(a.equals(b));   <span class="Annotate"> //<span class="point">True</span>	</span>			
+						</pre>
+					<div class="point">
+						<p> ==是进行值的比较，对于原始类型来说，就是比较它们的值，对于引用类型来说，就是检查它们引用的是不是同一个对象</p>
+					</div>
+					<div class="point">
+						<p> 当同样的字符串再次被创建的时候，便不再创建新的字符串，这叫做“String interning”，
+							编译期的字符串常量是自动interned的（就是会维护一个常量池，如果池中有这个字符串，那么直接引用之，否则再创建）</p>
+					</div>
+					<br>
+					<br>
+					<p class=" beginning">连接多个字符串：</p>
+					<p>用“<span class="point">+</span>”运算符实现，
+						用“+”连接其它数据类型时，会自动调用to string()方法，将其转化成字符串（前提：其中有一个或多个字符串，不考虑运算符优先级</p>
+					<br>
+					<br>
+					<p class=" beginning">获取字符串信息：</p>
+					<p>获取字符串长度：使用String类的length()方法</p>
+					<pre>
+1     <span class="Keyword">String</span> str1 = "we are students";
+2     <span class="Keyword">int</span> zise = str.length();
+					</pre>
+					<p>字符串查找：使用indexOf()或者lastIndexOf()方法</p>
+				</div>
+				<br>
+				<br>
+				<div class="java" id="java2">
+					<h2>以下没有更多了...</h2>
+				</div>
+				<div class="java" id="java3">
+
+				</div>
+			</div>
+
+			<!-- -----------------------------上面是Java，下面是前端------------------- -->
+
+			<div class="frontendmain">
+				<div class="frontend" id="frontend1">
+					<h2>We are seizing the time to build this page, please wait patiently...</h2>
+				</div>
+				<div class="frontend " id="frontend2">
+				</div>
+				<div class="frontend " id="frontend3">
+				</div>
+			</div>
+
+
+			<!-- ------------------------------以上是前端，下面是PHP------------------------------------ -->
+
+			<div class="PHPmain">
+				<div class="PHP" id="PHP1">
+					<h2>We are seizing the time to build this page, please wait patiently...</h2>
+				</div>
+				<div class="PHP" id="PHP2">
+
+				</div>
+				<div class="PHP" id="PHP3">
+
+				</div>
+
+			</div>
+
+			<!-- -------------------------------上面是PHP，下面是mysql--------------------------------------------- -->
+
+			<div class="mysqlmain">
+				<div class="mysql">
+					<h2>We are seizing the time to build this page, please wait patiently...</h2>
+				</div>
+
+			</div>
+
+			<!-- ------------------------------------上面是mysql,下面是教程---------------------------------------------------------------------- -->
+			<div class="Tutorialmain">
+				<div class="Tutorial">
+					<h2>We are seizing the time to build this page, please wait patiently...</h2>
+				</div>
+
+			</div>
+			<!-- -----------------------上面是教程，下面是英语------------------------------------------------ -->
+			<div class="Englishmain">
+				<div class="English">
+					<h2>WORDS</h2>
+					<p><span class="mask">tedious</span> 冗长乏味的</p>
+					<p><span class="mask">oblige</span> 迫使；使负有义务</p>
+					<p><span class="mask">absorbed</span> 极感兴趣的；全神贯注的；专注的</p>
+					<p><span class="mask">allergic</span> 不喜欢某事；对某事反感</p>
+					<p><span class="mask">excursion</span> 短途旅行；远足 </p>
+					<p><span class="mask">earnest</span> 非常认真的；郑重其事的 </p>
+					<p><span class="mask">exclaim</span> （由于惊奇，气愤或激动）呼喊，惊叫</p>
+					<p><span class="mask">whoa</span> 哎呀，哇（表示惊讶或认为某事物令人赞叹）</p>
+					<p><span class="mask">civilization</span> 文明（社会）</p>
+					<p><span class="mask">architecture</span> 建筑风格；建筑式样；建筑学</p>
+					<p><span class="mask"> budget</span> n. 预算; v. 编预算,为…做预算</p>
+					<p><span class="mask"> acute </span> a. 敏锐的,激烈的,尖锐的</p>
+					<p><span class="mask">replace</span> v. 取代</p>
+					<p><span class="mask">foreigner</span> n. 外国人</p>
+					<p><span class="mask">restless</span> a. 不安宁的,焦虑的</p>
+					<p><span class="mask">restlessly</span> ad. 不安定地，不安静地</p>
+					<p><span class="mask"> elbow</span> n. 手肘,急弯,扶手; v. 用手肘推开,推挤</p>
+					<p><span class="mask"> abrupt </span>a. 突然的,唐突的</p>
+					<p><span class="mask">brief</span> n. 摘要,简报,公事包; a. 简短的,简洁的; v. 对...作简报,摘要</p>
+					<p><span class="mask"> opening</span> n. 开始,口,揭幕,空缺的职务; vbl. 打开,开放,开始</p>
+					<p><span class="mask"> ritual</span>n. 仪式,典礼,宗教仪式,固定程序; a. 仪式的,依仪式而行的，老规矩的，惯常的</p>
+					<p><span class="mask"> interaction</span> n. 相互作用,相互影响</p>
+					<p><span class="mask"> convention </span>n. 大会,协定,惯例; [计算机] 约定</p>
+					<p><span class="mask"> leisure </span>a. 空闲的; n. 空闲,闲暇</p>
+					<p><span class="mask"> leisurely </span> a. 悠闲的,从容的; ad. 从容地,悠闲地</p>
+					<p><span class="mask">assess</span> v. 估定,评定</p>
+					<p><span class="mask">surroundings</span> n. 周围的事物,环境</p>
+					<p><span class="mask">golf</span> n. 高尔夫球; v. 打高尔夫球; vi. (打)高尔夫球</p>
+					<p><span class="mask"> generally</span> ad. 一般地</p>
+					<p><span class="mask"> probe</span> n. 探针,调查,探测针; v. 用探针测,详细调查</p>
+					<p><span class="mask"> tick</span> n. 被套(赊欠,滴答声,片刻,无线电信号); vt 赊销(滴答响,记以小点)</p>
+					<p><span class="mask">consequently</span> ad. 所以,因此 </p>
+					<p><span class="mask">saving </span> n. 存款; vbl. 拯救,救助</p>
+					<p><span class="mask">labor-saving</span> a. 省工的，节省劳力的，减轻劳动的</p>
+					<p><span class="mask"> device</span> n. 装置,设计,策略,设备 </p>
+					<p><span class="mask"> fax </span>n. 传真; v. 传真 </p>
+					<p><span class="mask"> email</span> n. 电子邮件（electronic mail 的缩略）</p>
+					<p><span class="mask"> electronic</span> a. 电子的; n. [-s]电子学,电子设备</p>
+					<p><span class="mask">significance </span>n. 意义,重要性</p>
+					<p><span class="mask">conduct </span>n. 行为,举动,品行; vt. 引导,指挥,管理; vt. 导电，传热</p>
+					<p><span class="mask">increasingly</span> ad. 逐渐地,渐增地</p>
+					<p><span class="mask">teleconference</span> n. (通过电话、电视等的)电讯会议</p>
+					<p><span class="mask"> satellite</span> n. 卫星</p>
+					<p><span class="mask">obtain</span> vt. 获得,得到; vi. 通用,流行,存在</p>
+					<p><span class="mask">superb </span>a. 极好的</p>
+					<p><span class="mask">whereas</span> conj.&ad. 然而,却,反之</p>
+					<p><span class="mask">elapse</span> v. 逝去,过去 </p>
+					<p><span class="mask">skillful</span> a. 熟练的</p>
+					<p><span class="mask">skillfulness</span> n. 熟练，有技巧，灵巧 </p>
+					<p><span class="mask"> competent</span> a. 有能力的,胜任的,足够的</p>
+					<p><span class="mask"> fulfill</span> v. 完成,履行; vt. 履行,完成</p>
+					<p><span class="mask"> result in</span> 结果，导致</p>
+					<p><span class="mask"> nothing but</span> 只有，除... ...以外什么也不</p>
+					<p><span class="mask"> account for</span> 作出解释，提出理由，说明</p>
+					<p><span class="mask"> charge for</span> 收费，要价，索价</p>
+					<p><span class="mask"> sand in the hourglass</span> 沙漏中的沙（沙漏上端所盛细沙用一小时从窄缝中漏到下端）</p>
+					<p><span class="mask">in a rush</span> 匆忙的</p>
+					<p><span class="mask">under pressure </span>在压力下，在强力下</p>
+					<p><span class="mask"> go with</span> 同时发生，伴随</p>
+					<p><span class="mask">work at </span>工作，从事于，钻研 </p>
+					<p><span class="mask">save for</span> 储存，储蓄</p>
+					<p><span class="mask"> at hand</span> 正考虑的 在附近，在手边，临近的</p>
+					<p><span class="mask">in person </span>亲身，亲自</p>
+					<p><span class="mask"> due to</span> 由于，因为</p>
+					<p><span class="mask">be worthy of</span>值得的，配得上的</p>
+					<p><span class="mask">desirable</span> a. 令人想要的; [计算机] 希望的</p>
+					<p><span class="mask"> fascinating</span> a. 迷人的</p>
+					<p><span class="mask">spite </span>n. 恶意,怨恨; vt. 刁难,伤害</p>
+					<p><span class="mask"> clash</span> n. 冲突,撞击声,抵触; v. 冲突,抵触,使...发出撞击声</p>
+					<p><span class="mask">tradition</span> n. 传统,惯例</p>
+					<p><span class="mask">evidently</span> ad. 明显地,显著地,必以为是</p>
+					<p><span class="mask">excitement</span> n. 激动,兴奋</p>
+					<p><span class="mask"> marvelous</span> a. 令人惊异的,了不起的,不平常的</p>
+					<p><span class="mask"> amuse </span>v. 消遣,娱乐,使...发笑</p>
+					<p><span class="mask">amusement</span> n. 娱乐,消遣 </p>
+					<p><span class="mask">ending </span>n. 结尾,结局</p>
+					<p><span class="mask"> hostile</span> a. 怀敌意的,敌对的 </p>
+					<p><span class="mask"> hostility</span> n. 敌意</p>
+					<p><span class="mask">moreover</span> ad. 此外,而且; conj. 再者,加之,而且</p>
+					<p><span class="mask">distress</span> n. 苦恼,贫困; v. 使...苦恼</p>
+					<p><span class="mask">devise</span> v. 设计</p>
+					<p><span class="mask"> mechanism </span>n. 机械,机构,结构; 机制，原理</p>
+					<p><span class="mask"> cope </span>v. (with)竞争,对抗,对付,妥善处理; vi. 对付,妥善处理</p>
+					<p><span class="mask"> repression</span> n. 抑制,抑压,制止 </p>
+					<p><span class="mask"> regression</span> n. 复原,逆行,退步</p>
+					<p><span class="mask">isolate</span> a. 孤立的; v. 隔离,孤立; vt. 使隔离,使孤立</p>
+					<p><span class="mask">isolation</span> n. 隔离,孤立</p>
+					<p><span class="mask"> avoid </span>v. 避免; vt. 避免,逃避</p>
+					<p><span class="mask"> reject</span> n. 被拒之人,不合格品,不及格者; v. 拒绝,驳回,丢弃</p>
+					<p><span class="mask"> rejection</span> n. 拒绝,被弃,被抛弃的实例 </p>
+					<p><span class="mask">helpful </span>a. 有帮助的,有益的</p>
+					<p><span class="mask"> recognition</span> n. 认出,承认 </p>
+					<p><span class="mask">recovery </span>n. 恢复,复原,痊愈</p>
+					<p><span class="mask">comprehension </span>n. 理解(力),领悟</p>
+					<p><span class="mask"> favorable</span> a. 有利的,赞许的,良好的</p>
+					<p><span class="mask"> symptom</span> n. 症状,征兆</p>
+					<p><span class="mask">distinction </span>n. 差别,不同,对比,区分,辨别</p>
+					<p><span class="mask">appreciate</span> v. 欣赏,感激,赏识; v. 增值; v. 领会，充分意识</p>
+					<p><span class="mask"> acquisition </span>n. 获得,所获之物</p>
+					<p><span class="mask"> alleviate</span> v. 减轻,使...缓和 </p>
+					<p><span class="mask"> furthermore </span>ad. 而且,此外 </p>
+					<p><span class="mask"> adjust to</span> 使适应（新环境），适应</p>
+					<p><span class="mask"> be familiar to</span> 为... ... 所熟悉的，常见（听）到的</p>
+					<p><span class="mask">culture shock </span>文化冲击，文化震撼（在陌生的文化环境中不知所措）</p>
+					<p><span class="mask">in the stage</span> 在... ... 阶段，在... ...时期 </p>
+					<p><span class="mask"> be tired of</span> 讨厌，不耐烦，厌烦</p>
+					<p><span class="mask"> separate from</span> 使分离，分开</p>
+					<p><span class="mask"> prevent from</span> 阻止，防止 </p>
+					<p><span class="mask">deal with</span> 处理，料理 </p>
+					<p><span class="mask">come to </span>达到某状态</p>
+					<p><span class="mask"> recover from</span> 从... ... 恢复到正常状态 </p>
+					<p><span class="mask"> go through </span>完成，通过</p>
+					<p><span class="mask"> global </span>a. 全球性的,全局的</p>
+					<p><span class="mask"> ecology</span> n. 生态学</p>
+					<p><span class="mask"> undertake</span> v. 从事,保证</p>
+					<p><span class="mask"> initiative </span>a. 创始的,初步的,自发的; n. 第一步,首创精神</p>
+					<p><span class="mask"> abundant</span> a. 丰富的,充裕的 </p>
+					<p><span class="mask">cod</span> n. 鳕鱼; v. 哄骗,愚弄</p>
+					<p><span class="mask"> species</span> n. 物种,种类 </p>
+					<p><span class="mask"> herring </span>n. 青鱼,鲱,紧密 </p>
+					<p><span class="mask"> fisherman</span> n. 渔夫</p>
+					<p><span class="mask">ambitious </span>a. 热望的,有雄心的,有抱负的</p>
+					<p><span class="mask">diverse</span> a. 不同的,相异的,多种多样的 </p>
+					<p><span class="mask"> diversity </span>n. 差异,多样性; vt. 使不同,使多样化</p>
+					<p><span class="mask">tropical </span>a. 热带的</p>
+					<p><span class="mask"> clear-cut </span>a. 轮廓鲜明的, 清晰的 </p>
+					<p><span class="mask"> erosion</span> n. 腐蚀,侵蚀</p>
+					<p><span class="mask"> extensive </span>a. 广泛的,广阔的 </p>
+					<p><span class="mask">series</span> n. 连续,系列</p>
+					<p><span class="mask"> jungle</span> a. 丛林的,蛮荒的; n. 丛林,密林 </p>
+					<p><span class="mask"> colony</span> n. 殖民地</p>
+					<p><span class="mask">colonize </span>v. 开拓殖民地,殖民,移植 </p>
+					<p><span class="mask"> reverse </span>n. 相反,背面,失败; a. 反面的,相反的,颠倒的; v. 颠倒,逆转,倒退</p>
+					<p><span class="mask">tax</span> n. 税,租税,重负; v. 课以税,使...负重荷,斥责</p>
+					<p><span class="mask"> finance</span> n. 财政,财务; v. 供给...经费,负担经费</p>
+					<p><span class="mask">conflict</span> n. 冲突,矛盾,争执; v. 争执,撞斗,冲突; [计算机] 冲突</p>
+					<p><span class="mask"> industrialize</span> v. 使...业化,工业化</p>
+					<p><span class="mask"> contaminate</span> v. 弄脏,污染</p>
+					<p><span class="mask"> contamination</span> n. 污染</p>
+					<p><span class="mask"> biology</span> n. 生物学</p>
+					<p><span class="mask">biologically </span>ad. 从生物学的角度 </p>
+					<p><span class="mask"> treaty</span> n. 条约,协定</p>
+					<p><span class="mask"> fund</span> n. 基金; v. 资助; vt. 为...提供资金</p>
+					<p><span class="mask">explosive</span> a. 爆炸(性)的; n. 炸药</p>
+					<p><span class="mask"> removal</span> n. 移动,移居,除去</p>
+					<p><span class="mask">sponsor </span>n. 保证人,赞助者; v. 发起,赞助</p>
+					<p><span class="mask"> cash</span> n. 现金; v. 兑现,付现款 </p>
+					<p><span class="mask"> cassava</span> n. 木薯</p>
+					<p><span class="mask"> maize</span> n. 玉米</p>
+					<p><span class="mask"> generate</span> v. 产生,发生; [计算机] 产生 </p>
+					<p><span class="mask"> regenerate </span>vt. 再生(回收,革新); a. 再生的(更新的,革新的)</p>
+					<p><span class="mask">observer</span> n. 观察者</p>
+					<p><span class="mask"> strengthen</span> v. 加强,变坚固</p>
+					<p><span class="mask"> impact</span> n. 冲击,冲突,影响; v. 挤入,撞击,对...发生影响</p>
+					<p><span class="mask"> frown </span>n. 皱眉; v. 皱眉头</p>
+					<p><span class="mask"> shelter</span> n. 庇护所,避难所,庇护; v. 庇护,保护,隐匿</p>
+					<p><span class="mask"> wage</span> n. 薪水,报偿,代价; v. 开始,进行（战争、运动）</p>
+					<p><span class="mask"> massive </span>a. 巨大的</p>
+					<p><span class="mask"> ad</span> abbr. (advertisement的缩写)广告; n. (缩)广告</p>
+					<p><span class="mask"> induce</span> v. 引诱,招致,感应</p>
+					<p><span class="mask"> inducement</span> n. 诱因,动机,刺激物</p>
+					<p><span class="mask"> convert</span> v. 使转变,使...改变信仰,倒置; n. 皈依者,改宗者</p>
+					<p><span class="mask">target</span> n. 靶,目标; vt. 把...作为目标; 塔吉特(财富500强公司之一，总部所在地美国,主要经营零售)</p>
+					<p><span class="mask"> concern with</span> 忙于，从事，关心 </p>
+					<p><span class="mask"> regardless of </span>prep. 不管，无论</p>
+					<p><span class="mask">spring up </span>迅速或突然的出现，发生，长出</p>
+					<p><span class="mask"> take measures to </span>采取措施，采取办法</p>
+					<p><span class="mask"> as a result of </span>由于…而...，作为...的结果</p>
+					<p><span class="mask"> aim at </span>瞄准,针对</p>
+					<p><span class="mask">agree to</span> 同意，允诺，赞成</p>
+					<p><span class="mask"> set up </span>建立，创立，开办 </p>
+					<p><span class="mask"> lead to</span> 通往；导向 </p>
+					<p><span class="mask"> cash crop</span> 经济作物 </p>
+					<p><span class="mask"> birth control</span> 节育</p>
+					<p><span class="mask"> Canada / Canadian </span>加拿大 / 加拿大人，加拿大的</p>
+					<p><span class="mask"> Grand Banks </span>大浅滩（指北美洲纽芬兰岛东南广阔的大西洋浅滩，为世界大渔场之一）</p>
+					<p><span class="mask"> Costa Rica</span> 哥斯达黎加 [拉丁美洲国家]（在中美洲南部）</p>
+					<p><span class="mask"> Brazil</span> n. 巴西</p>
+					<p><span class="mask"> Amazon </span>n. 女战士</p>
+					<p><span class="mask">Indian </span>a. 印度的; n. 印第安人,印度人 </p>
+					<p><span class="mask">Poland </span>n. 波兰</p>
+					<p><span class="mask">Hungary</span> n. 匈牙利[欧洲]</p>
+					<p><span class="mask"> Czech</span> n. 捷克人[语]; a. 捷克斯洛伐克的, 捷克斯洛伐克人[语]的</p>
+					<p><span class="mask"> Slovak </span>n. 斯洛伐克人[语]; a. 斯洛伐克人[语]的</p>
+					<p><span class="mask"> Elbe River </span>易北河[中欧] </p>
+					<p><span class="mask"> Oder</span> 奥得河[中欧] </p>
+					<p><span class="mask">Danube </span>n. 多瑙河 </p>
+					<p><span class="mask"> Ghana</span> n. 迦纳</p>
+					<p><span class="mask">Indonesia/Indonesian</span> 印度尼西亚[东南亚岛国] / 印度尼西亚的，印度尼西亚人</p>
+					<p><span class="mask">Islam</span> n. 伊斯兰教,回教,回教徒</p>
+					<p><span class="mask"> mecca</span> n. 众人渴望去的地方; n. 麦加[沙特阿拉伯]</p>
+					<p><span class="mask"> Saudi</span> Arabia n. 沙特阿拉伯</p>
+					<p><span class="mask"> vacant</span> a. 空的</p>
+					<p><span class="mask"> rare</span> a. 稀罕的,罕见的,珍贵的</p>
+					<p><span class="mask"> option</span> n. 选择</p>
+					<p><span class="mask">enormous</span> a. 巨大的,庞大的 </p>
+					<p><span class="mask"> private</span> a. 私人的; n. 士兵 </p>
+					<p><span class="mask"> ownership</span> n. 所有权</p>
+					<p><span class="mask"> literally </span>ad. 逐字地,按照字面上地,不夸张地</p>
+					<p><span class="mask">urban</span> a. 城市的</p>
+					<p><span class="mask"> pave</span> v. 铺设,安排,为...铺路</p>
+					<p><span class="mask">mud</span> n. 泥,泥浆; v. 弄脏,使沾污泥</p>
+					<p><span class="mask">childhood</span> n. 童年,幼年</p>
+					<p><span class="mask"> bulb </span>n. 电灯泡,球状物 </p>
+					<p><span class="mask"> container</span> n. 容器,集装箱</p>
+					<p><span class="mask"> amateur</span> a. 业余的; n. 业余爱好者 </p>
+					<p><span class="mask"> gardener</span> n. 园丁,花匠,园艺家 </p>
+					<p><span class="mask">pea </span>n. 豌豆 </p>
+					<p><span class="mask">salad </span>n. 色拉 </p>
+					<p><span class="mask"> costly</span> a. 昂贵的</p>
+					<p><span class="mask"> ditch</span> n. 沟渠; v. 坠沟中</p>
+					<p><span class="mask"> lorry</span> n. 卡车</p>
+					<p><span class="mask"> erect </span>a. 直立的,竖立的,笔直的; v. 竖</p>
+					<h2>以下没有更多了...</h2>
+				</div>
+
+			</div>
+		</div>
+		
+		
+
+
+		<div class="box">
+			<h2>PHP-plate Notice</h2>
+			<p>We are seizing the time to build this page, please wait patiently,If you have a better suggestion, please contact
+				us.
+			</p>
+			<a href="#">Close</a>
+		</div>
+		<div class="box">
+			<h2> mysql-plate Notice</h2>
+			<p>We are seizing the time to build this page, please wait patiently,If you have a better suggestion, please contact
+				us.
+			</p>
+			<a href="#">Close</a>
+		</div>
+		<div class="box">
+			<h2>Tutorial-plate Notice</h2>
+			<p>We are seizing the time to build this page, please wait patiently,If you have a better suggestion, please contact
+				us.
+			</p>
+			<a href="#">Close</a>
+		</div>
+		<div id="menu1">
+			<div class="path path1">
+				<a href="home.html"><p>首页</p></a>
+			</div>
+			<div class="path path2">
+				<a href="Personalcenter.html"><p>个人中心</p></a>
+			</div>
+			<li class="nav-item">
+				<a class="nav-link left-to-right" href="index.html">博 客</a>
+			</li>
+			<div class="path path4">
+				<a href="MessageBoard.html"><p>留言板</p></a>
+			</div>
+			<div class="menu">
+		      <p>menu</p>
+			</div>
+		</div>
+	</body>
+	<script src="js/note.js" type="text/javascript" charset="utf-8"></script>
+</html>

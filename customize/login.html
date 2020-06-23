@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>FrontEndBase-登录</title>
+		<link rel="shortcut icon" href="./img/favicon.ico" />
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/login.css" />
+	<body>
+		<div class="login-box">	
+			<h2>login</h2>
+			<form>
+				<div class="user-box">
+					<input type="text" name="" required="">
+					<label>Username</label>
+				</div>
+				<div class="user-box">
+					<input type="password" name="" required="">
+					<label>Password</label>
+				</div>
+				<a href="#">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+					Submit
+				</a>
+			</form>
+		</div>
+			<div class="footer">
+				<p><a href="#">Copyright ©FrontEndBase 2020 备案号：12138</a></p>
+			</div>
+		<canvas id="q"></canvas>
+	</body>
+	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		var Username = document.querySelector("input");
+		var Password = document.querySelectorAll("input")[1];
+        var xml =new XMLHttpRequest();
+		xml.open("GET","accountinformation.json",true);
+		xml.onreadystatechange = function (){
+			if(xml.readyState == 4){
+				var txt = JSON.parse(xml.responseText);
+				console.log(txt);
+			}else{
+				alert("遇到错误");
+			}
+		}
+	</script>
+</html>

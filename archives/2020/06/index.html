@@ -60,19 +60,19 @@
 		<nav class="header-menu">
 			<ul>
 			
-				<li><a href="/">主页</a></li>
+				<li><a href="/customize/home.html">主页</a></li>
 	        
 				<li><a href="/archives/index.html">归档</a></li>
 	        
-				<li><a href="/">个人中心</a></li>
+				<li><a href="/customize/Personalcenter.html">个人中心</a></li>
 	        
-				<li><a href="/">笔记</a></li>
+				<li><a href="/customize/note.html">笔记</a></li>
 	        
-				<li><a href="/">照片墙</a></li>
+				<li><a href="/customize/MessageBoard.html">留言板</a></li>
 	        
-				<li><a href="/">留言板</a></li>
+				<li><a href="/customize/login.html">登录</a></li>
 	        
-				<li><a href="/">登录</a></li>
+				<li><a href="/customize/photowall.html">照片墙</a></li>
 	        
 			</ul>
 		</nav>
@@ -83,11 +83,11 @@
 		<nav class="header-smart-menu">
     		
     			
-    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
+    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">主页</a>
     			
             
     			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
+    			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
     			
             
     			
@@ -170,19 +170,19 @@
 				<ul style="width: 70%">
 				
 				
-					<li style="width: 14.285714285714286%"><a href="/">主页</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/home.html">主页</a></li>
 		        
 					<li style="width: 14.285714285714286%"><a href="/archives/index.html">归档</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/">个人中心</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/Personalcenter.html">个人中心</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/">笔记</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/note.html">笔记</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/">照片墙</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/MessageBoard.html">留言板</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/">留言板</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/login.html">登录</a></li>
 		        
-					<li style="width: 14.285714285714286%"><a href="/">登录</a></li>
+					<li style="width: 14.285714285714286%"><a href="/customize/photowall.html">照片墙</a></li>
 		        
 				</ul>
 			</nav>
@@ -214,19 +214,30 @@
   <div class="archive-article-inner">
     <header class="archive-article-header">
       	<div class="article-meta">
-	      	<a href="/2020/06/22/hello-world/" class="archive-article-date">
-  	<time datetime="2020-06-22T11:04:53.124Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+	      	<a href="/2020/06/23/hello-world/" class="archive-article-date">
+  	<time datetime="2020-06-23T13:53:19.418Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-23</time>
 </a>
         </div>
     	 
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/06/22/hello-world/">hexo 常用命令行</a>
+      <a class="archive-article-title" href="/2020/06/23/hello-world/">hexo 常用命令行</a>
     </h1>
   
 
         <div class="article-info info-on-right">
           
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">记忆</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
           
 
         </div>
@@ -324,11 +335,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">主页</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
+      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
@@ -351,6 +362,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">记忆</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
@@ -401,7 +416,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="/source/customize/moban.html" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
             </li>
           
             <li class="search-li">

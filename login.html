@@ -1,12 +1,0 @@
-<!DOCTYPE html>
-  <head>
-    <meta charset="UTF-8">
-    <title>显示鼠标单击位置</title>
-    <style>
-      .mouse{position:absolute;background:#ffd965;width:40px;height:40px;border-radius:20px;}
-    </style>
-  </head>
-  <body>
-    <div id="mouse" class="mouse"></div>    <script>      var mouse = document.getElementById('mouse');      //需求：鼠标在页面上单击时，获取单击时的位置，并显示一个小圆点      document.onclick = function(event) {        // 获取事件对象的兼容处理        var event = event || window.event;        // 鼠标在页面上的位置        var pageX = event.pageX || event.clientX + document.documentElement.scrollLeft;        var pageY = event.pageY || event.clientY + document.documentElement.scrollTop;        // 计算<div>应该显示的位置        var targetX = pageX - mouse.offsetWidth / 2;        var targetY = pageY - mouse.offsetHeight / 2;        // 在鼠标单击的位置显示<div>         mouse.style.display = 'block';        mouse.style.left = targetX + 'px';        mouse.style.top = targetY + 'px';      };    </script>
-  </body>
-</html>

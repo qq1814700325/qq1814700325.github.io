@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="前端，JavaScript，CSS，HTML" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+		<link href="//cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+		<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<link rel="shortcut icon" href="./img/favicon.ico" /> <!-- 页眉图标 -->
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" /><!-- 轮播图 -->
+		<link href="dist/camroll_slider.css" rel="stylesheet"><!-- 轮播图 -->
+		<!-- 网站内矢量图标 -->
+		<!-- 移动端样式 -->
+		<link rel="stylesheet" type="text/css" href="css/index.css" /> <!-- 主页样式 -->
+		<title>FrontEndBase-前端基地</title>
+		<style type="text/css">
+			@font-face {
+				font-family: 思源柔黑-Monospace-Normal;
+				src: url("font/思源柔黑-Monospace-Normal.ttf");
+			}
+
+			/* 滚动条设置 */
+			::-webkit-scrollbar {
+				/* 滚动条 */
+				width: 10px;
+			}
+
+			::-webkit-scrollbar-thumb {
+				/* 滚动条上的滚动滑块. */
+				background: linear-gradient(transparent, #30ff00);
+				/* 背景颜色 */
+				border-radius: 6px;
+			}
+
+			::-webkit-scrollbar-thumb:hover {
+				background: linear-gradient(transparent, #00ffff);
+			}
+
+			@keyframes blink {
+
+				from,
+				to {
+					color: transparent;
+				}
+
+				50% {
+					color: #000000;
+				}
+			}
+
+			#teletype span {
+				animation: blink 1s step-end infinite;
+			}
+
+			/* 公共 */
+			body {
+				/* background-color:#212529 !important; */
+				/* background-color: #333; */
+				height: 1800px;
+				/* min-width: 640px; */
+				font-family: helvetica;
+				letter-spacing: -1px;
+				width: 100%;
+				/* background: url(images/night.gif); */
+				/* filter: grayscale(100%); */
+				background-color: #212529;
+			}
+
+			html {
+				width: 100%;
+				height: 1800px;
+				overflow: hidden;
+				font-size: 18px;
+			}
+
+			* {
+				padding: 0;
+				margin: 0;
+				font-family: helvetica;
+
+			}
+
+			a {
+				text-decoration: none !important;
+			}
+
+			a:visited {
+				color: #FFFFFF;
+			}
+
+			a:hover {
+				color: aqua !important;
+			}
+
+			/* 导航栏 */
+
+			.bg-dark {
+				background-color: #222 !important;
+			}
+
+			/* 导航栏背景色 */
+			.navbar-dark .navbar-toggler {
+				border-color: #00FFFF !important;
+			}
+
+			/* 导航栏按钮 */
+			/* 公共 */
+		</style>
+
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="candles">
+				<div class="light__wave"></div>
+				<div class="candle1">
+					<div class="candle1__body">
+						<div class="candle1__eyes">
+							<span class="candle1__eyes-one"></span>
+							<span class="candle1__eyes-two"></span>
+						</div>
+						<div class="candle1__mouth"></div>
+					</div>
+					<div class="candle1__stick"></div>
+				</div>
+
+				<div class="candle2">
+					<div class="candle2__body">
+						<div class="candle2__eyes">
+							<div class="candle2__eyes-one"></div>
+							<div class="candle2__eyes-two"></div>
+						</div>
+					</div>
+					<div class="candle2__stick"></div>
+				</div>
+				<div class="candle2__fire"></div>
+				<div class="sparkles-one"></div>
+				<div class="sparkles-two"></div>
+				<div class="candle__smoke-one">
+
+				</div>
+				<div class="candle__smoke-two">
+
+				</div>
+
+			</div>
+			<div class="floor">
+			</div>
+
+		</div>
+		<div class="container-fluid">
+			<!-- 导航栏 -->
+			<div class="row" id="NavigationBar">
+				<div class="col-md-2"></div>
+				<div class="col-md-8">
+					<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+						<a class=" navbar-brand" href="#">
+							<h3>FrontEndBase</h3>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+							<span class="navbar-toggler-icon"></span>
+						</button>
+						<div class="collapse navbar-collapse justify-content-center" id="collapsibleNavbar">
+							<div class=" navbar-nav">
+								<ul class="navbar-nav">
+									<li class="nav-item">
+										<a class="nav-link left-to-right ThisPage" href="#">首 页</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link left-to-right" href="index.html">博 客</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link left-to-right" href="note.html">笔 记</a>
+									</li>
+									
+									<li class="nav-item">
+										<a class="nav-link left-to-right" href="photowall.html">照 片 墙</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link left-to-right" href="MessageBoard.html">留言板</a>
+									</li>
+									<li class="nav-item">
+										<a class="nav-link left-to-right" href="Personalcenter.html">个人中心</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="border-wrapper">
+							<button type="button" class="border-item"><a href="login.html"> 登 录</a></button>
+						</div>
+					</nav>
+				</div>
+				<div class="col-md-2">
+					<div class="search-box ">
+						<input class="search-txt" type="text" name="" placeholder="(装饰) ..." />
+						<a class="serach-btn" href="#">
+							<i><img src="img/sousuo.png" style="width: 25px;"></i>
+
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- 导航栏 -->
+			<!-- ----------------------------------------------------------------------- -->
+			<!-- 轮播图 -->
+			<div class="htmleaf-container row ">
+				<!-- slider -->
+				<div id="my-slider" class="crs-wrap">
+					<div class="crs-screen">
+						<div class="crs-screen-roll">
+							<div class="crs-screen-item" style="background-image:url(img/1.jpeg)">
+								<div class="crs-screen-item-content">
+									<h5>Front-end automation:<br>
+										<br>
+										Any repetitive task of a simple machine should be done by a machine.
+									</h5>
+								</div>
+							</div>
+							<div class="crs-screen-item" style="background-image:url(img/2.jpeg)">
+								<div class="crs-screen-item-content">
+									<h5>Rather than trying to avoid pain by telling others to follow certain rules,<br>
+										it is better to eliminate the pain at the tool level</h5>
+								</div>
+							</div>
+							<div class="crs-screen-item" style="background-image:url(img/3.jpeg)">
+								<div class="crs-screen-item-content">
+									<h5>Rather than trying to avoid pain by telling others to follow certain rules,<br>
+										it is better to eliminate the pain at the tool level</h5>
+								</div>
+							</div>
+							<div class="crs-screen-item" style="background-image:url(img/4.jpeg)">
+								<div class="crs-screen-item-content">
+									<h4>Rather than trying to avoid pain by telling others to follow certain rules,<br>
+										it is better to eliminate the pain at the tool level</h4>
+								</div>
+							</div>
+							<div class="crs-screen-item" style="background-image:url(img/5.jpeg)">
+								<div class="crs-screen-item-content">
+									<h4>Rather than trying to avoid pain by telling others to follow certain rules,<br>
+										it is better to eliminate the pain at the tool level</h4>
+								</div>
+							</div>
+							<div class="crs-screen-item" style="background-image:url(img/6.jpeg)">
+								<div class="crs-screen-item-content">
+									<h4>Rather than trying to avoid pain by telling others to follow certain rules,<br>
+										it is better to eliminate the pain at the tool level</h4>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="crs-bar">
+						<div class="crs-bar-roll-current"></div>
+						<div class="crs-bar-roll-wrap">
+							<div class="crs-bar-roll">
+								<div class="crs-bar-roll-item" style="background-image:url(img/1.jpeg)"></div>
+								<div class="crs-bar-roll-item" style="background-image:url(img/2.jpeg)"></div>
+								<div class="crs-bar-roll-item" style="background-image:url(img/3.jpeg)"></div>
+								<div class="crs-bar-roll-item" style="background-image:url(img/4.jpeg)"></div>
+								<div class="crs-bar-roll-item" style="background-image:url(img/5.jpeg)"></div>
+								<div class="crs-bar-roll-item" style="background-image:url(img/6.jpeg)"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- 轮播图 -->
+
+			<!-- ---------------------------------------------------------------- -->
+			<!-- 基础板块 -->
+			<div class="row " id="BasePlate">
+				<div class="LightEmittingArticle">
+					<!-- <span>这是青青子衿的个人小站   欢迎关注微信公众号》》一个小衿 </span> -->
+					<span id="teletype" hidden style="z-index: 99;"></span>
+				</div>
+				<div class="headline col-md-12"><span>基 础 部 分</span></div>
+				<div class="col-md-1 BasePlateFill"></div>
+				<div class="box col-md col-sm-6">
+					<div class="content">
+						<h2>01</h2>
+						<h3>HTML5</h3>
+						<p>
+							HTML5是构建Web内容的一种语言描述方式。
+							HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。
+							HTML产生于1990年，1997年HTML4成为互联网标准，并广泛应用于互联网应用的开发。
+						</p>
+						<a href="https://www.runoob.com/html/html-tutorial.html">Read More</a>
+					</div>
+				</div>
+
+				<div class="col-md-1 BasePlateFill"></div>
+
+				<div class="box  col-md  col-sm-6">
+					<div class="content">
+						<h2>02</h2>
+						<h3>CSS3</h3>
+						<p>
+							层叠样式表(英文全称：Cascading Style Sheets)
+							是一种用来表现HTML（标准通用标记语言的一个应用）或XML（标准通用标记语言的一个子集）等文件样式的计算机语言。
+							CSS不仅可以静态地修饰网页，还可以配合各种脚本语言动态地对网页各元素进行格式化.
+						</p>
+						<a href="https://www.runoob.com/css3/css3-tutorial.html">Read More</a>
+					</div>
+				</div>
+				<div class="col-md-1 BasePlateFill"></div>
+
+				<div class="box col-md col-sm-6">
+					<div class="content">
+						<h2>03</h2>
+						<h3>JavaScript</h3>
+						<p>
+							JavaScript（简称“JS”） 是一种具有函数优先的轻量级，解释型或即时编译型的高级编程语言。
+							作为开发Web页面的脚本语言而出名， 基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式和声明式（如函数式编程）风格.
+						</p>
+						<a href="https://www.runoob.com/js/js-tutorial.html">Read More</a>
+					</div>
+				</div>
+				<div class="col-md-1  BasePlateFill"></div>
+
+				<div class="box col-md col-sm-6">
+					<div class="content">
+						<h2>04</h2>
+						<h3>The framework</h3>
+						<p>
+							HTML5是构建Web内容的一种语言描述方式。
+							HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。
+							HTML产生于1990年，1997年HTML4成为互联网标准，并广泛应用于互联网应用的开发。
+						</p>
+						<a href="https://www.runoob.com/jquery/jquery-tutorial.html">Read More</a>
+					</div>
+				</div>
+				<div class="col-md-1 BasePlateFill"></div>
+			</div>
+			<!-- 基础板块 -->
+			<!-- ------------------------------------------------------------------------ -->
+			<div class="headline col-md-12"><span>必 看 书 单</span></div>
+			<div class="row  booklist">
+				<ul>
+					<li>
+						<div class="book">
+
+						</div>
+					</li>
+					<li>
+						<div class="book">
+
+						</div>
+					</li>
+					<li>
+						<div class="book">
+
+						</div>
+					</li>
+					<li>
+						<div class="book">
+
+						</div>
+					</li>
+				</ul>
+			</div>
+			<!-- --------------------------------------------------------------------------------------- -->
+			<!-- 论坛 -->
+			<div class="headline col-md-12"><span>学 习 规 划 </span></div>
+
+			<div class="row">
+				<div class="col-md-2 "></div>
+				<div class="bbs col-sm-12 col-md-8 ">
+					<svg viewbox="0 0 200 100" id="chart">
+						<g transform="translate(0,100) scale(1,-1)" id="path-container">
+							<path fill="none" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" id="line" d="M12,60 34,20 56,30 78,60 100,70 122,60 144,60 166,80 188,80" />
+						</g>
+					</svg>
+				</div>
+				<div class="col-md-2 "></div>
+			</div>
+			<!-- 论坛 -->
+			<!-- ------------------------------------------------------------------------------------------------ -->
+			<!-- 视频介绍 -->
+			<!-- <div class="row">
+				<div class="col-md-12">.col-md-12</div>
+				
+			</div> -->
+			<!-- 视频介绍 -->
+			<!-- ----------------------------------------------------------------------------------------------- -->
+			<div class="row footer ">
+				<div class="col-md-2 col-sm-2 "></div>
+				<div class="col-md-2 col-sm-2 footer1">
+					<img src="images/erweima.jpg"></div>
+				<div class=" col-md-4 col-sm-4 footer2">
+					<span><a href="#">计算机科学与技术专业</a></span><br />
+					<span><a href="#">学号：1940706123 周宁</a></span><br />
+					<span><a href="#">友情链接</a></span><br />
+					<span><a href="#">Copyright ©FrontEndBase 2020 备案号：12138</a></span><br />
+				</div>
+				<div class="col-md-4 "></div>
+			</div>
+			<div id="Advertising">
+				<div class="Advertising2">
+					<svg class="icon" viewbox="0 0 1024 1024" width="40" height="40" t="1591278041252" p-id="6076" version="1.1">
+						<path fill="#00ffff" d="M 457.931 352.742 L 457.931 352.742 c 14.1748 -14.052 33.8735 -22.2692 54.005 -22.2692 l 0 0 c 20.2625 0 39.8967 8.21612 54.136 22.2692 l 369.966 370.095 l 0 0 c 29.8652 29.858 29.8652 78.3474 0 108.204 l 0 0 c -29.9133 29.7936 -78.2185 29.7936 -108.075 0 L 511.936 515.203 L 196.163 831.042 l 0 0 c -29.9849 29.7977 -78.286 29.7977 -108.204 -0.127913 l 0 0 c -29.8631 -29.7301 -29.8631 -78.2195 0 -108.076 L 457.931 352.742 L 457.931 352.742 Z M 457.931 352.742"
+						 p-id="6077" /></svg>
+				</div>
+				<svg class="Advertisingicon" viewbox="0 0 1024 1024" width="40" height="40" t="1591248767416" p-id="2760" version="1.1">
+					<path fill="#00ffff" d="M 62.9968 484.062 l 423.163 0 L 486.159 60.9 L 62.9968 60.9 L 62.9968 484.062 Z M 168.788 166.69 l 211.581 0 l 0 211.581 L 168.788 378.271 L 168.788 166.69 Z M 539.055 60.9 l 0 423.163 l 423.163 0 L 962.218 60.9 L 539.055 60.9 Z M 856.426 378.271 L 644.846 378.271 L 644.846 166.69 l 211.581 0 L 856.426 378.271 Z M 221.683 325.377 l 105.79 0 L 327.473 219.585 L 221.683 219.585 L 221.683 325.377 Z M 62.9968 960.12 l 423.163 0 L 486.159 536.957 L 62.9968 536.957 L 62.9968 960.12 Z M 168.788 642.748 l 211.581 0 l 0 211.581 L 168.788 854.329 L 168.788 642.748 Z M 803.532 219.585 L 697.74 219.585 l 0 105.79 l 105.79 0 L 803.531 219.585 Z M 539.055 960.12 l 105.79 0 L 644.846 854.33 L 539.055 854.33 L 539.055 960.12 Z M 644.846 642.748 l 0 211.581 l 105.79 0 L 750.636 642.748 L 644.846 642.748 Z M 856.426 854.33 L 750.636 854.33 L 750.636 960.12 l 211.581 0 L 962.217 748.538 L 856.426 748.538 L 856.426 854.33 Z M 856.426 642.748 l 105.79 0 L 962.217 536.957 L 856.426 536.957 L 856.426 642.748 Z M 539.055 536.957 l 0 105.79 l 105.79 0 L 644.846 536.957 L 539.055 536.957 Z M 221.683 801.434 l 105.79 0 L 327.473 695.644 L 221.683 695.644 L 221.683 801.434 Z"
+					 p-id="2761" /></svg>
+				<svg class="Collecticon" viewbox="0 0 1024 1024" width="40" height="40" t="1591249834805" p-id="4406" version="1.1">
+					<path class="selected" fill="#00ffff" d="M 786.31 1003.35 c -11.0933 0 -23.8933 -3.75467 -34.9867 -9.216 l -239.616 -119.808 L 270.043 994.133 c -23.8933 12.9707 -55.296 11.0933 -77.4827 -5.46133 s -34.9867 -46.08 -29.5253 -73.728 l 49.8347 -258.048 L 23.0886 479.915 C 2.77927 459.605 -4.55939 428.203 2.77927 402.432 c 9.216 -27.648 31.4027 -47.9573 60.7573 -51.5413 l 263.68 -47.9573 L 445.318 63.1467 c 12.9707 -25.7707 38.7413 -42.3253 66.3893 -42.3253 S 567.003 37.376 578.097 63.1467 l 117.931 239.616 l 263.68 46.08 c 27.648 3.75467 51.5413 23.8933 59.0507 51.5413 c 9.216 27.648 1.87733 57.1733 -18.432 77.4827 L 810.203 656.896 l 47.9573 258.048 c 5.46133 29.5253 -7.33867 57.1733 -29.5253 73.728 c -10.9227 9.216 -25.7707 14.6773 -42.3253 14.6773 Z"
+					 p-id="4407" data-spm-anchor-id="a313x.7781069.0.i17" /></svg>
+				<div class="Advertising1">
+					<img src="images/erweima.jpg">
+				</div>
+			</div>
+		</div>
+	</body>
+	<script src="js/jquery-1.11.0.min.js" type="text/javascript"></script>
+	<script src="dist/camroll_slider.js"></script>
+	<script src="js/index.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		$("#my-slider").camRollSlider();
+	</script>
+</html>
