@@ -1111,9 +1111,6 @@ input[type="text"]::-webkit-input-placeholder {
 }
 .booklist span {
 	display:block;
-	padding-top: 30px;
-	padding-left: 30px;
-	position: absolute;
 	text-align: center;
 	color: #FFFFFF;
 	z-index: 100;
@@ -1530,5 +1527,11 @@ input[type="text"]::-webkit-input-placeholder {
 	#Advertising {
 		display: none;
 		visibility: hidden;
+	}
+	.booklist,.fangxiang{
+		display: none;
+	}
+	.guihua{
+		margin-bottom: -120px;
 	}
 }
