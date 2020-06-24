@@ -92,6 +92,8 @@ function cycle() {
 
 
 
+
+
 let svg_width = document.querySelector("#chart").viewBox.baseVal.width;
 console.log(svg_width);
 let name = document.createElementNS("http://www.w3.org/2000/svg", "text");
@@ -141,3 +143,24 @@ let line = document.querySelector('#line')
 let strokeLength = Math.ceil(line.getTotalLength())
 document.querySelector('#chart').style.setProperty('--stroke-length', strokeLength)
 document.querySelector('#chart').classList.add('animate')
+
+
+
+
+var lefticon = document.getElementsByClassName("lefticon")[0];
+var righticon = document.getElementsByClassName("righticon")[0];
+var demo= document.getElementById("demo1");
+demo.scrollLeft = 0;
+// lefticon.addEventListener("mouseover",function (){
+// 	demo.scrollLeft++;
+// 	if (demo.scrollLeft >= demo.offsetwidth) {
+// 		demo.scrollLeft = 0;}
+	
+// })
+
+			function startMove() {
+				demo.scrollLeft++;
+				if (demo.scrollLeft >= demo.offsetwidth) {
+					demo.scrollLeft = 0;}
+			}
+			var time =  setInterval(startMove, 30);

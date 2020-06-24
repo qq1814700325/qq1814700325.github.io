@@ -666,8 +666,6 @@
 	border-color: transparent transparent aqua transparent;
 	border-width: 1px;
 	border-style: solid;
-
-
 }
 
 #collapsibleNavbar {
@@ -839,7 +837,6 @@
 
 .border-item:hover {
 	cursor: pointer;
-
 }
 
 input[type="text"]::-webkit-input-placeholder {
@@ -881,7 +878,36 @@ input[type="text"]::-webkit-input-placeholder {
 	margin-bottom: 5px;
 	margin-right: -16px;
 	margin-left: -16px;
+	position: relative;
+}
 
+.LightEmittingArticle::before {
+	content: " ";
+	position: absolute;
+	bottom: -280px;
+	right: 360px;
+	background-color: transparent;
+	width: 0px;
+	height: 0px;
+	border-width: 120px;
+	border-style: solid;
+	border-color: #333 transparent transparent transparent;
+	transform: skew(60deg);
+	z-index: -1;
+}
+.LightEmittingArticle::after {
+	content: " ";
+	position: absolute;
+	bottom: -400px;
+	left: 410px;
+	background-color: transparent;
+	width: 0px;
+	height: 0px;
+	border-width: 120px;
+	border-style: solid;
+	border-color: #333 transparent transparent transparent;
+	transform: rotate(35deg) scale(1.5,2);
+	z-index: -1;
 }
 
 .LightEmittingArticle span {
@@ -1057,17 +1083,124 @@ input[type="text"]::-webkit-input-placeholder {
 /* 基础板块 */
 /* --------------------------------------------------------------------------------------------------------------------- */
 /* 书单 */
+.booklist .lefticon{
+	position: absolute;
+	top: 50%;
+	left: 20px;
+	z-index: 100;
+	margin-left: 300px;
+}
+.booklist .righticon{
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	margin-right: 4800px;
+	z-index: 100;
+}
 .booklist {
-	width: 100%;
-	height: 350px;
-	/* background-color: #03A9F4; */
-	margin-left: 15px;
+	width: 7000px;
+	height: 600px;
+	margin-top: 50px;
+	background-color: #333;
+	margin-left: -300px;
 	margin-right: 15px;
 	margin-bottom: 50px;
+	margin-bottom: 70px;
+	position: relative;
+	overflow: hidden;
+}
+.booklist span {
+	display:block;
+	padding-top: 30px;
+	padding-left: 30px;
+	position: absolute;
+	text-align: center;
+	color: #FFFFFF;
+	z-index: 100;
+}
+
+.booklist div {
+	width:7000px;
+	height: 600px;
+	margin-top: 50px;
+}
+.booklist ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.booklist li {
+	display: inline-block;
+	/* border: 2px solid #0099FF; */
+	height: 520px;
+	width: 560px;
+}
+
+.booklist li img {
+	width: 100%;
+	float: left;
+	padding: 0;
 }
 
 
+.booklist a img:hover {
+	transform: scale(1.2, 1.2);
+	transition: transform 0.5s ease-in;
+}
+ .booklist a img {
+	width: 560px;
+	height: 500px;
+	box-shadow: 5px 5px 5px #3E3E40;
+}
 
+.booklist a {
+	float: left;
+	height: 210px;
+	margin: 8px;
+	text-decoration: none;
+	color: slategrey;
+	display: block;
+}
+.booklist::after {
+	content: " ";
+	position: absolute;
+	top: 75px;
+	left: 410px;
+	background-color: transparent;
+	width: 0px;
+	height: 0px;
+	border-width: 120px;
+	border-style: solid;
+	border-color: #333 transparent transparent transparent;
+	transform: rotate(50deg) scale(1.5,2);
+	z-index: -1;
+}
+
+.booklist::before {
+	content: " ";
+	position: absolute;
+	bottom: -385px;
+	left: 210px;
+	background-color: transparent;
+	width: 0px;
+	height: 0px;
+	border-width: 120px;
+	border-style: solid;
+	border-color: #FFFFFF transparent transparent transparent;
+	z-index: 10000;
+	/* transform: rotate(50deg) scale(1.5,2); */
+}
+@keyframes enlarge{
+	from{
+		transform: scale(1,1);
+		
+	}
+	to{
+		transform: scale(1.5,1.5);
+		transition：transform 5s ease-in-out 0s;
+	}
+}
 
 
 
@@ -1102,7 +1235,7 @@ input[type="text"]::-webkit-input-placeholder {
 }
 
 #chart #line {
-	stroke:  #9F3AF0;
+	stroke: #9F3AF0;
 	stroke-dasharray: var(--stroke-length);
 	stroke-dashoffset: var(--stroke-length);
 }
@@ -1134,6 +1267,7 @@ input[type="text"]::-webkit-input-placeholder {
 	font-size: 3px;
 	fill: #00FFFF;
 }
+
 /* 论坛 */
 /* --------------------------------------------------------------------------------------------------------------- */
 /* ------------------------------------------------------------------------------------------------------- */
@@ -1388,11 +1522,12 @@ input[type="text"]::-webkit-input-placeholder {
 	.LightEmittingArticle {
 		height: 20px;
 	}
-	
+
 	#chart {
-		width: 400px;	
+		width: 400px;
 	}
-	#Advertising{
+
+	#Advertising {
 		display: none;
 		visibility: hidden;
 	}

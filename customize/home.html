@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta name="keywords" content="前端，JavaScript，CSS，HTML" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport" />
 		<link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
 		<link href="//cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 		<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
@@ -170,12 +170,12 @@
 										<a class="nav-link left-to-right ThisPage" href="#">首 页</a>
 									</li>
 									<li class="nav-item">
-										<a class="nav-link left-to-right" href="index.html">博 客</a>
+										<a class="nav-link left-to-right" href="../index.html">博 客</a>
 									</li>
 									<li class="nav-item">
 										<a class="nav-link left-to-right" href="note.html">笔 记</a>
 									</li>
-									
+
 									<li class="nav-item">
 										<a class="nav-link left-to-right" href="photowall.html">照 片 墙</a>
 									</li>
@@ -189,7 +189,9 @@
 							</div>
 						</div>
 						<div class="border-wrapper">
-							<button type="button" class="border-item"><a href="login.html"> 登 录</a></button>
+							<button type="button" class="border-item">
+								<a href="login.html"> 登 录</a>
+							</button>
 						</div>
 					</nav>
 				</div>
@@ -322,11 +324,13 @@
 				<div class="box col-md col-sm-6">
 					<div class="content">
 						<h2>04</h2>
-						<h3>The framework</h3>
+						<h3>jQuery</h3>
 						<p>
-							HTML5是构建Web内容的一种语言描述方式。
-							HTML5是互联网的下一代标准，是构建以及呈现互联网内容的一种语言方式．被认为是互联网的核心技术之一。
-							HTML产生于1990年，1997年HTML4成为互联网标准，并广泛应用于互联网应用的开发。
+							jQuery是一个快速、简洁的JavaScript框架，是继Prototype之后又一个优秀的JavaScript代码库。
+							其宗旨是“write Less，Do More”，即倡导写更少的代码，
+							做更多的事情。它封装JavaScript常用的功能代码，提供一种简便的JavaScript设计模式，优化HTML文档操作、事件处理、动画设计和Ajax交互。
+							<!-- 如今的前端已经不再像以前一样就是简单的写写页面和调调样式而已，现在的前端越来越复杂，
+							知识点越来越丰富，web前端发展至今，演变出了无数的库和框架，例如Vue.js，bootstrap等等，熟练运用框架可以使构建页面更加轻松快捷。 -->
 						</p>
 						<a href="https://www.runoob.com/jquery/jquery-tutorial.html">Read More</a>
 					</div>
@@ -335,35 +339,53 @@
 			</div>
 			<!-- 基础板块 -->
 			<!-- ------------------------------------------------------------------------ -->
-			<div class="headline col-md-12"><span>必 看 书 单</span></div>
+			<div class="headline col-md-12"><span>进 阶 方 向</span></div>
 			<div class="row  booklist">
-				<ul>
-					<li>
-						<div class="book">
-
-						</div>
-					</li>
-					<li>
-						<div class="book">
-
-						</div>
-					</li>
-					<li>
-						<div class="book">
-
-						</div>
-					</li>
-					<li>
-						<div class="book">
-
-						</div>
-					</li>
-				</ul>
+				<svg class="lefticon" viewbox="0 0 1024 1024" width="80" height="80" t="1593009450857" p-id="1298" version="1.1">
+					<path fill="#ffffff" d="M 71.68 514.56 a 442.88 442.88 0 1 1 442.88 442.88 A 443.392 443.392 0 0 1 71.68 514.56 Z m 814.326 0 a 371.446 371.446 0 1 0 -371.446 371.446 a 371.866 371.866 0 0 0 371.446 -371.446 Z m -605.998 39.424 a 51.415 51.415 0 0 1 0.19456 -72.5555 l 159.232 -158.638 a 35.7171 35.7171 0 1 1 50.4115 50.601 L 382.607 480.256 h 356.168 a 35.7171 35.7171 0 1 1 0 71.4342 H 378.409 L 493.568 667.566 a 35.7171 35.7171 0 0 1 -50.688 50.3501 Z"
+					 p-id="1299" /></svg>
+				<div>
+					 <ul id="demo1">
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>如火如荼</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>樱花乐章</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>漫天飞舞</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>樱花烂漫</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>纷纷扬扬</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>红了樱花</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>青了黛瓦</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>春林初盛</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>悠然忘归</p>
+							</span></a></li>
+					<li><a href="#"><img src="video/微信图片_20200624203121.png" /><span>
+								<p>落英缤纷</p>
+							</span></a></li>
+                        </ul>
+				</div>
+				<svg  class="righticon" viewbox="0 0 1024 1024" width="80" height="80" t="1593009735995"
+				 p-id="3656" version="1.1">
+					<path fill="#ffffff" d="M 957.44 514.56 a 442.88 442.88 0 1 0 -442.88 442.88 a 443.392 443.392 0 0 0 442.88 -442.88 Z m -814.326 0 a 371.446 371.446 0 1 1 371.446 371.446 A 371.866 371.866 0 0 1 143.114 514.56 Z m 605.998 39.424 a 51.415 51.415 0 0 0 -0.19456 -72.5555 l -159.232 -158.638 a 35.712 35.712 0 0 0 -50.4115 50.601 L 646.513 480.256 H 290.345 a 35.7171 35.7171 0 1 0 0 71.4342 h 360.366 L 535.552 667.566 a 35.7171 35.7171 0 1 0 50.688 50.3501 Z"
+					 p-id="3657" /></svg>
 			</div>
 			<!-- --------------------------------------------------------------------------------------- -->
 			<!-- 论坛 -->
 			<div class="headline col-md-12"><span>学 习 规 划 </span></div>
-
 			<div class="row">
 				<div class="col-md-2 "></div>
 				<div class="bbs col-sm-12 col-md-8 ">
@@ -384,7 +406,7 @@
 			</div> -->
 			<!-- 视频介绍 -->
 			<!-- ----------------------------------------------------------------------------------------------- -->
-			<div class="row footer ">
+			<!-- 	<div class="row footer ">
 				<div class="col-md-2 col-sm-2 "></div>
 				<div class="col-md-2 col-sm-2 footer1">
 					<img src="images/erweima.jpg"></div>
@@ -395,7 +417,14 @@
 					<span><a href="#">Copyright ©FrontEndBase 2020 备案号：12138</a></span><br />
 				</div>
 				<div class="col-md-4 "></div>
-			</div>
+			</div> -->
+			<!-- 	<div class="jumbotron text-center" style="margin-bottom:0">
+				<img src="images/erweima.jpg">
+			  <span><a href="#">计算机科学与技术专业</a></span><br />
+			  <span><a href="#">学号：1940706123 周宁</a></span><br />
+			  <span><a href="#">友情链接</a></span><br />
+			  <span><a href="#">Copyright ©FrontEndBase 2020 备案号：12138</a></span><br />
+			</div> -->
 			<div id="Advertising">
 				<div class="Advertising2">
 					<svg class="icon" viewbox="0 0 1024 1024" width="40" height="40" t="1591278041252" p-id="6076" version="1.1">
