@@ -403,8 +403,10 @@ input[type="text"]::-webkit-input-placeholder {
 .footer {
 	background-color: #222;
 	width: 100vw;
-	height: 40vh;
+	height: 350px;
 	margin-top: 50px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .footer1 {
@@ -412,21 +414,23 @@ input[type="text"]::-webkit-input-placeholder {
 	justify-content: center;
 	align-items: center;
 }
-.footer1 img{
+
+.footer1 img {
 	width: 160px;
 }
-.footer2{
+
+.footer2 {
 	display: flex;
 	justify-content: center;
 	color: #FFFFFF;
 	align-items: center;
 }
-.footer2 span{
+
+.footer2 span {
 	display: block;
 	width: 100%;
 	margin: 30px;
 }
-/* 底部 */
 
 
 
@@ -462,6 +466,7 @@ input[type="text"]::-webkit-input-placeholder {
 
 
 @media screen and (max-width: 576px) {
+	
 	.border-wrapper {
 		visibility: hidden;
 		display: none;
@@ -486,8 +491,12 @@ input[type="text"]::-webkit-input-placeholder {
     .box{
 		width: auto;
 	}
-
-		
+   .footer img{
+   	margin: 20px;
+   }
+    video{
+		z-index: -1;
+	}
 }
 
 /* ====================================== */

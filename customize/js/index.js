@@ -202,15 +202,93 @@ function startMoveright() {
 }
 
 lefticon.addEventListener("mouseover", function() {
-	time = setInterval(startMoveleft, 30);
+	time = setInterval(startMoveleft, 20);
 })
 lefticon.addEventListener("mouseout", function() {
 	clearInterval(time);
 })
 righticon.addEventListener("mouseover", function() {
-	time1 = setInterval(startMoveright, 30);
+	time1 = setInterval(startMoveright, 20);
 })
 righticon.addEventListener("mouseout", function() {
 	clearInterval(time1);
 })
-console.log(demo.style.marginLeft)
+// ------------------------------------------------------------------
+
+
+var p = document.getElementsByClassName("p");
+var modal = document.getElementsByClassName("modal");
+var modalImg = document.getElementsByClassName("modal-content")
+var captionText = document.getElementsByClassName("caption");
+var spanc = document.getElementsByClassName("close");
+
+p[0].onclick = function() {
+	modal[0].style.display = "block";
+	captionText[0].innerHTML = modalImg[0].alt;
+}
+p[1].onclick = function() {
+	modal[1].style.display = "block";
+	captionText[1].innerHTML = modalImg[1].alt;
+}
+p[2].onclick = function() {
+	modal[2].style.display = "block";
+	captionText[2].innerHTML = modalImg[2].alt;
+}
+p[3].onclick = function() {
+	modal[3].style.display = "block";
+	captionText[3].innerHTML = modalImg[3].alt;
+}
+p[4].onclick = function() {
+	modal[4].style.display = "block";
+	captionText[4].innerHTML = modalImg[4].alt;
+}
+p[5].onclick = function() {
+	modal[5].style.display = "block";
+	captionText[5].innerHTML = modalImg[5].alt;
+}
+p[6].onclick = function() {
+	modal[6].style.display = "block";
+	captionText[6].innerHTML = modalImg[6].alt;
+}
+p[7].onclick = function() {
+	modal[7].style.display = "block";
+	captionText[7].innerHTML = modalImg[7].alt;
+}
+p[8].onclick = function() {
+	modal[8].style.display = "block";
+	captionText[8].innerHTML = modalImg[8].alt;
+}
+p[9].onclick = function() {
+	modal[9].style.display = "block";
+	captionText[9].innerHTML = modalImg[9].alt;
+}
+spanc[0].onclick = function() {
+	modal[0].style.display = "none";
+}
+spanc[1].onclick = function() {
+	modal[1].style.display = "none";
+}
+spanc[2].onclick = function() {
+	modal[2].style.display = "none";
+}
+spanc[3].onclick = function() {
+	modal[3].style.display = "none";
+}
+spanc[4].onclick = function() {
+	modal[4].style.display = "none";
+}
+spanc[5].onclick = function() {
+	modal[5].style.display = "none";
+}
+spanc[6].onclick = function() {
+	modal[6].style.display = "none";
+}
+spanc[7].onclick = function() {
+	modal[7].style.display = "none";
+}
+spanc[8].onclick = function() {
+	modal[8].style.display = "none";
+}
+spanc[9].onclick = function() {
+	modal[9].style.display = "none";
+}
