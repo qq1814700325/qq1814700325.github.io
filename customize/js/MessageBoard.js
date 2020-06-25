@@ -1,16 +1,16 @@
-var wrapper = document.getElementsByClassName("wrapper")[0];
-var loadingmain = document.getElementsByClassName("loadingmain")[0];
-var html = document.getElementsByTagName("html")[0];
-window.addEventListener("load", function() {
-	loadingmain.style.animation = "xiaoshi 2s linear 0s 1 normal";
-	setTimeout(function() {
-		loadingmain.remove();
-		wrapper.style.display = "flex";
-		html.style.overflowX = "hidden";
-		html.style.overflowY = "inherit";
-	}, 1800);
+// var wrapper = document.getElementsByClassName("wrapper")[0];
+// var loadingmain = document.getElementsByClassName("loadingmain")[0];
+// var html = document.getElementsByTagName("html")[0];
+// window.addEventListener("load", function() {
+// 	loadingmain.style.animation = "xiaoshi 2s linear 0s 1 normal";
+// 	setTimeout(function() {
+// 		loadingmain.remove();
+// 		wrapper.style.display = "flex";
+// 		html.style.overflowX = "hidden";
+// 		html.style.overflowY = "inherit";
+// 	}, 1800);
 	
-});
+// });
 
 
 var Input = document.querySelector(".input");

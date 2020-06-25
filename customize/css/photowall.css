@@ -413,8 +413,10 @@ input[type="text"]::-webkit-input-placeholder {
 .footer {
 	background-color: #222;
 	width: 100vw;
-	height: 35vh;
+	height: 350px;
 	margin-top: 50px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .footer1 {
@@ -499,4 +501,10 @@ input[type="text"]::-webkit-input-placeholder {
 	}
 
 	/* ---------------------------- */
+	.footer{
+		/* width: 100vw; */
+	}
+	.footer img{
+		margin: 20px;
+	}
 }

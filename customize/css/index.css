@@ -1083,18 +1083,24 @@ input[type="text"]::-webkit-input-placeholder {
 /* 基础板块 */
 /* --------------------------------------------------------------------------------------------------------------------- */
 /* 书单 */
-.booklist .lefticon{
+.icon{
+	width: 100%;
+	position: relative;
+}
+.icon .lefticon{
 	position: absolute;
-	top: 50%;
+	top: 280px;
 	left: 20px;
 	z-index: 100;
-	margin-left: 300px;
+	visibility: hidden;
+	/* margin-left: 300px; */
 }
-.booklist .righticon{
+.icon .righticon{
 	position: absolute;
-	top: 50%;
+	top: 280px;
 	right: 20px;
-	margin-right: 4800px;
+	visibility: hidden;
+	/* margin-right: 4800px; */
 	z-index: 100;
 }
 .booklist {
@@ -1102,13 +1108,11 @@ input[type="text"]::-webkit-input-placeholder {
 	height: 600px;
 	margin-top: 50px;
 	background-color: #333;
-	margin-left: -300px;
-	margin-right: 15px;
+	margin-left: -3800px;
 	margin-bottom: 50px;
-	margin-bottom: 70px;
-	position: relative;
 	overflow: hidden;
 }
+
 .booklist span {
 	display:block;
 	text-align: center;
@@ -1120,6 +1124,7 @@ input[type="text"]::-webkit-input-placeholder {
 	width:7000px;
 	height: 600px;
 	margin-top: 50px;
+	overflow: hidden;
 }
 .booklist ul {
 	list-style: none;
@@ -1128,27 +1133,27 @@ input[type="text"]::-webkit-input-placeholder {
 }
 
 .booklist li {
-	display: inline-block;
-	/* border: 2px solid #0099FF; */
-	height: 520px;
-	width: 560px;
+	display: inline;
+	 height: 520px; 
+	 width: 560px;
 }
 
 .booklist li img {
 	width: 100%;
 	float: left;
 	padding: 0;
+	width: 560px;
+	height: 500px;
+	box-shadow: 5px 5px 5px #3E3E40;
+	-webkit-filter: blur(4px)  grayscale(100%);
+	filter:   grayscale(100%);
+	
 }
 
 
 .booklist a img:hover {
 	transform: scale(1.2, 1.2);
 	transition: transform 0.5s ease-in;
-}
- .booklist a img {
-	width: 560px;
-	height: 500px;
-	box-shadow: 5px 5px 5px #3E3E40;
 }
 
 .booklist a {
@@ -1158,12 +1163,14 @@ input[type="text"]::-webkit-input-placeholder {
 	text-decoration: none;
 	color: slategrey;
 	display: block;
-}
-.booklist::after {
+} 
+
+
+.icon::after {
 	content: " ";
 	position: absolute;
 	top: 75px;
-	left: 410px;
+	left: 370px;
 	background-color: transparent;
 	width: 0px;
 	height: 0px;
@@ -1174,19 +1181,20 @@ input[type="text"]::-webkit-input-placeholder {
 	z-index: -1;
 }
 
-.booklist::before {
+.icon::before {
 	content: " ";
 	position: absolute;
-	bottom: -385px;
+	bottom: -950px;
 	left: 210px;
 	background-color: transparent;
 	width: 0px;
 	height: 0px;
 	border-width: 120px;
 	border-style: solid;
-	border-color: #FFFFFF transparent transparent transparent;
+	border-radius: 43%;
+	border-color: #333 transparent transparent transparent;
 	z-index: 10000;
-	/* transform: rotate(50deg) scale(1.5,2); */
+	transform: scale(2,1.5) rotate(-30deg);
 }
 @keyframes enlarge{
 	from{
@@ -1272,8 +1280,10 @@ input[type="text"]::-webkit-input-placeholder {
 .footer {
 	background-color: #222;
 	width: 100vw;
-	height: 35vh;
+	height: 350px;
 	margin-top: 50px;
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .footer1 {
@@ -1483,10 +1493,6 @@ input[type="text"]::-webkit-input-placeholder {
 	}
 
 	/* ----------------- */
-	#BasePlate .box {
-		height: 300px;
-
-	}
 
 	.BasePlateFill {
 		display: none;
@@ -1497,11 +1503,13 @@ input[type="text"]::-webkit-input-placeholder {
 	}
 
 	#BasePlate .box {
-		width: 40vw;
-		height: 300px;
+		width:99vw;
+		height: 250px;
 		border: none;
 		margin-left: 20px;
+		margin-right: 20px;
 		margin-top: 20px;
+		display: inline;
 	}
 
 	#BasePlate .box:nth-child(2n+2)::before {
@@ -1533,5 +1541,15 @@ input[type="text"]::-webkit-input-placeholder {
 	}
 	.guihua{
 		margin-bottom: -120px;
+	}
+	.bbs{
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+    .icon{
+		display: none;
+	}
+	.footer img{
+		margin: 20px;
 	}
 }

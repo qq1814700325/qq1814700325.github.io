@@ -136,7 +136,7 @@ for (var i = 0; i < Technicalname.length; i++) {
 	value.classList.add('values')
 	circle.setAttribute('transform-origin', `${start_x + 22*i } ${timenum[i]}`)
 	value.setAttribute('transform', `translate(0, ${timenum[i] * 2 - 6}) scale(1, -1)`)
-	value.appendChild(document.createTextNode(timenum[i]+" days"))
+	value.appendChild(document.createTextNode(timenum[i] + " days"))
 	document.querySelector('#path-container').appendChild(value)
 }
 let line = document.querySelector('#line')
@@ -149,18 +149,68 @@ document.querySelector('#chart').classList.add('animate')
 
 var lefticon = document.getElementsByClassName("lefticon")[0];
 var righticon = document.getElementsByClassName("righticon")[0];
-var demo= document.getElementById("demo1");
-demo.scrollLeft = 0;
-// lefticon.addEventListener("mouseover",function (){
-// 	demo.scrollLeft++;
-// 	if (demo.scrollLeft >= demo.offsetwidth) {
-// 		demo.scrollLeft = 0;}
-	
-// })
+var booklist = document.getElementsByClassName("booklist")[0];
+booklist.addEventListener("mouseover", function() {
+	lefticon.style.visibility = "visible";
+	righticon.style.visibility = "visible";
+})
+booklist.addEventListener("mouseout", function() {
+	lefticon.style.visibility = "hidden";
+	righticon.style.visibility = "hidden";
+})
+righticon.addEventListener("mouseout", function() {
 
-			function startMove() {
-				demo.scrollLeft++;
-				if (demo.scrollLeft >= demo.offsetwidth) {
-					demo.scrollLeft = 0;}
-			}
-			var time =  setInterval(startMove, 30);
+	righticon.style.visibility = "hidden";
+})
+righticon.addEventListener("mouseover", function() {
+
+	righticon.style.visibility = "visible";
+})
+lefticon.addEventListener("mouseout", function() {
+	lefticon.style.visibility = "hidden";
+
+})
+lefticon.addEventListener("mouseover", function() {
+	lefticon.style.visibility = "visible";
+
+})
+
+var demo = document.getElementById("demo");
+var p = document.querySelectorAll("img.p")
+p.onmouseover = function() {
+	this.style.filter = " "
+}
+
+demo.style.marginLeft = 0 + "px";
+var i = 0;
+
+function startMoveleft() {
+	i--;
+	demo.style.marginLeft = i + "px";
+	console.log(demo.style.marginLeft)
+	if (i < -2000) {
+		startMoveleft();
+	}
+}
+
+function startMoveright() {
+	i++;
+	demo.style.marginLeft = i + "px";
+	if (i < 2050) {
+		startMoveright();
+	}
+}
+
+lefticon.addEventListener("mouseover", function() {
+	time = setInterval(startMoveleft, 30);
+})
+lefticon.addEventListener("mouseout", function() {
+	clearInterval(time);
+})
+righticon.addEventListener("mouseover", function() {
+	time1 = setInterval(startMoveright, 30);
+})
+righticon.addEventListener("mouseout", function() {
+	clearInterval(time1);
+})
+console.log(demo.style.marginLeft)
