@@ -379,6 +379,7 @@ var closebox = document.querySelectorAll("a.closebox");
 
 url[0].onclick = function() {
 	urlbox[0].classList.toggle("urlboxactive");
+	alert("The game begins! Control the baffle to let the ball hit all the blocks.")
 	 draw();
 }
 url[1].onclick = function() {
@@ -416,7 +417,7 @@ var timeDifference = parseInt((btime - basebtime) / 1000);
 var day = parseInt(timeDifference / 86400);
 b.innerHTML = "" + day;
 
-
+// -----------------------------------------------------------------------
 
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
@@ -501,7 +502,7 @@ function collisionDetection() {
 function drawBall() {
 	ctx.beginPath();
 	ctx.arc(x, y, ballRadius, 0, Math.PI * 2);
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "#00ffff";
 	ctx.fill();
 	ctx.closePath();
 }
@@ -509,7 +510,7 @@ function drawBall() {
 function drawPaddle() {
 	ctx.beginPath();
 	ctx.rect(paddleX, canvas.height - paddleHeight, paddleWidth, paddleHeight);
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = "#00ffff";
 	ctx.fill();
 	ctx.closePath();
 }
@@ -524,7 +525,7 @@ function drawBricks() {
 				bricks[c][r].y = brickY;
 				ctx.beginPath();
 				ctx.rect(brickX, brickY, brickWidth, brickHeight);
-				ctx.fillStyle = "#0095DD";
+				ctx.fillStyle = "#00ffff";
 				ctx.fill();
 				ctx.closePath();
 			}
@@ -534,13 +535,13 @@ function drawBricks() {
 
 function drawScore() {
 	ctx.font = "16px Arial";
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = " red";
 	ctx.fillText("Score: " + score, 8, 20);
 }
 
 function drawLives() {
 	ctx.font = "16px Arial";
-	ctx.fillStyle = "#0095DD";
+	ctx.fillStyle = " red";
 	ctx.fillText("Lives: " + lives, canvas.width - 65, 20);
 }
 
