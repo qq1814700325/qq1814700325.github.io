@@ -380,7 +380,7 @@ var closebox = document.querySelectorAll("a.closebox");
 url[0].onclick = function() {
 	urlbox[0].classList.toggle("urlboxactive");
 	alert("The game begins! Control the baffle to let the ball hit all the blocks.")
-	 draw();
+	draw();
 }
 url[1].onclick = function() {
 	urlbox[1].classList.toggle("urlboxactive");
@@ -591,3 +591,41 @@ function draw() {
 
 
 // draw();
+
+
+
+
+var booklist = document.getElementsByClassName("booklist");
+booklist[0].onclick = function() {
+	window.location.assign("pdf.html")
+}
+
+
+var a_idx = 0;
+jQuery(document).ready(function($) {
+	$("body").click(function(e) {
+		var a = new Array("❤富强❤", "❤民主❤", "❤文明❤", "❤和谐❤", "❤自由❤", "❤平等❤", "❤公正❤", "❤法治❤", "❤爱国❤", "❤敬业❤", "❤诚信❤",
+			"❤友善❤");
+		var $i = $("<span></span>").text(a[a_idx]);
+		a_idx = (a_idx + 1) % a.length;
+		var x = e.pageX,
+			y = e.pageY;
+		$i.css({
+			"z-index": 9999999,
+			"top": y - 20,
+			"left": x,
+			"position": "absolute",
+			"color": "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) +
+				")"
+		});
+		$("body").append($i);
+		$i.animate({
+				"top": y - 180,
+				"opacity": 0
+			},
+			1500,
+			function() {
+				$i.remove();
+			});
+	});
+});

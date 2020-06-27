@@ -8,18 +8,18 @@
 	</head>
 	<link rel="stylesheet" type="text/css" href="css/login.css" />
 	<body>
-		<div class="login-box">	
+		<div class="login-box">
 			<h2>login</h2>
-			<form>
+			<form action=" ">
 				<div class="user-box">
-					<input type="text" name="" required="">
+					<input type="text" name="" required="^[a-zA-Z][a-zA-Z0-9_]{4,15}$">
 					<label>Username</label>
 				</div>
 				<div class="user-box">
-					<input type="password" name="" required="">
+					<input type="password" name="" required="^[a-zA-Z]\w{5,17}$">
 					<label>Password</label>
 				</div>
-				<a href="#">
+				<a href="#" class="sub">
 					<span></span>
 					<span></span>
 					<span></span>
@@ -28,24 +28,52 @@
 				</a>
 			</form>
 		</div>
-			<div class="footer">
-				<p><a href="#">Copyright ©FrontEndBase 2020 备案号：12138</a></p>
-			</div>
+		<div class="footer">
+			<p><a href="copyright.html" target="_blank">Copyright ©FrontEndBase 2020 备案号：12138</a></p>
+		</div>
 		<canvas id="q"></canvas>
 	</body>
 	<script src="js/login.js" type="text/javascript" charset="utf-8"></script>
 	<script type="text/javascript">
+		window.onload = function (){
+			alert("Username:aa123456,bb123456,cc123456 Password:aa123456,bb123456,cc123456");
+			
+		}
 		var Username = document.querySelector("input");
 		var Password = document.querySelectorAll("input")[1];
-        var xml =new XMLHttpRequest();
-		xml.open("GET","accountinformation.json",true);
-		xml.onreadystatechange = function (){
-			if(xml.readyState == 4){
-				var txt = JSON.parse(xml.responseText);
-				console.log(txt);
-			}else{
-				alert("遇到错误");
+		var sub = document.getElementsByClassName("sub")[0];
+		Username.addEventListener("blur", function() {
+			return Usernametxt = this.value;
+			console.log(Usernametxt);
+		})
+		Password.addEventListener("blur", function() {
+			return Passwordtxt = this.value;
+			console.log(Passwordtxt);
+		})
+		var xml = new XMLHttpRequest();
+		xml.open("GET", "accountinformation.json", true);
+		sub.onclick = function() {
+			xml.onreadystatechange = function() {
+				if (this.readyState == 4 && this.status == 200) {
+					var responseText = JSON.parse(xml.responseText);
+					console.log(responseText.Username);
+					console.log(responseText.Username[0])
+					for (var i = 0; i < 3; i++) {
+						if (responseText.Username[i] == Usernametxt) {
+							for (var j = 0; j < 3; j++) {
+								if (responseText.Password[j] == Passwordtxt) {
+									alert("账号密码均正确！");
+									window.location.assign("Personalcenter.html");
+								}
+							}
+						}
+					}
+				} else {
+					
+				}
+				
 			}
+			xml.send(null);
 		}
 	</script>
 </html>

@@ -327,7 +327,7 @@ input[type="text"]::-webkit-input-placeholder {
 /* ------------------------------------------------------------------------------------------------------------- */
 /* 提示 */
 .reminder {
-	height: 300px;
+	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
